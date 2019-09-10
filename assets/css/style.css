@@ -1,0 +1,41 @@
+body{
+    font-size: medium;
+    background: url("assets/images/game.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#container{
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    padding:10px;
+    
+}
+
+.panel{
+    max-width: 80%;
+    margin:20px auto;
+    border-radius: 10px;
+    padding:10px;
+    background:black;
+    color:white;
+    
+}
+
+button{
+    background:blue;
+    height:3em;
+    width: 80%;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    color:white;
+    font-size: large;
+}
+
+input{
+    border-radius: 10px;
+    width:80%;
+    text-align: center;
+    height: 4em;
+}

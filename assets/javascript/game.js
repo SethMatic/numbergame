@@ -1,22 +1,33 @@
-var randomNumber = getRandomNumber(20);
-var guess;
-var guessCount = 0;
-var correctGuess = false;
+var computerGuess;
+var userGuesses = [];
+var attempts = 0;
 
-function getRandomNumber(upper){
-    var num = Math.floor(Math.random()*upper) +1;
-    return num; 
+function newGame(){
+    window.location.reload();
 }
 
-while(true){
-    guess = prompt('I am thinking of a number between 1 and 50. What is it?')
-    guessCount += 1;
-    if (parseInt(guess) === randomNumber){
-        correctGuess = true;
-        break;
-    }
+function init() {
+    computerGuess = Math.floor(Math.random() * 100 + 1);
 }
 
-document.write('<h1>You Guessed the Number!');
+function compareGuess(){
+    var userGuess = document.getElementById('inputBox').value;
 
-document.write('It took you'+" "+ guessCount+'tries to guess the number'+" "+randomNumber);
+    userGuesses.push(userGuess);
+    document.getElementById('guessLog').innerHTML = userGuesses;
+
+    attempts++;
+    document.getElementById('attempts').innerHTML = attempts;
+
+
+if(userGuess > computerGuess){
+    document.getElementById('textOutput').innerHTML= "You're too high!";
+    document.getElementById('inputBox').value = "";
+
+} else if (userGuess < computerGuess){
+    document.getElementById('textOutput').innerHTML= "Too low my friend!";
+    document.getElementById('inputBox').value = "";
+} else{
+    document.getElementById('textOutput').innerHTML= "YOU GOT IT!";
+}
+}
